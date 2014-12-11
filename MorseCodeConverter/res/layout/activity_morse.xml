@@ -28,6 +28,13 @@
 
             <requestFocus />
         </EditText>
+
+        <Button
+            android:id="@+id/convertMorse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/textConvertBtn" />
         
         <TextView
             android:id="@+id/morse_textDisplayTitle"

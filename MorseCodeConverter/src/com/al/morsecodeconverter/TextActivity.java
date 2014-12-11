@@ -2,10 +2,11 @@ package com.al.morsecodeconverter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.al.morsecodeconverter.editorlistener.TextBoxEditor;
 import com.al.morsecodeconverter.worker.MorseCodeWorker;
 
 /**
@@ -16,6 +17,9 @@ import com.al.morsecodeconverter.worker.MorseCodeWorker;
  */
 public class TextActivity extends Activity
 {
+    //This string is used for any TAG displays.
+    String classname = getClass().getSimpleName();
+    
     MorseCodeWorker workerClass = new MorseCodeWorker();
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +29,30 @@ public class TextActivity extends Activity
 	
 	EditText textInput = (EditText) findViewById(R.id.textInputBox);
 	
-	textInput.addTextChangedListener(new TextBoxEditor((TextView) findViewById(R.id.textMorseDisplay),'t'));
+	Button convertBtn = (Button) findViewById(R.id.convertText);
+	convertBtn.setOnClickListener(new morseConverter(textInput.getText().toString(), null));
+	
+//	textInput.addTextChangedListener(new TextBoxEditor((TextView) findViewById(R.id.textMorseDisplay),'t'));
+    }
+    
+    private class morseConverter implements View.OnClickListener{
+	private String inputString;
+	private MorseCodeWorker mWorker;
+	
+	public morseConverter(String input, View v)
+	{
+	    mWorker = new MorseCodeWorker();
+	    this.inputString = input;
+	    onClick(v);
+	}
+
+	@Override
+	public void onClick(View v)
+	{
+	    String strResult = mWorker.mCodeEncode(inputString);
+	    Log.d(classname, strResult);
+	    
+	}
+	
     }
 }

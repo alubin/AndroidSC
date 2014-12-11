@@ -12,5 +12,6 @@
     <string name="textDisplay">Text Display</string>
     <string name="textToMorseInput">Text Input:</string>
     <string name="text_MorseDisplay">Morse Code Display</string>
+    <string name="textConvertBtn">Convert</string>
 
 </resources>
