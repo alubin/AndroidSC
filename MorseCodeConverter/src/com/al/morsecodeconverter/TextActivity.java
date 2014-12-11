@@ -8,6 +8,12 @@ import android.widget.TextView;
 import com.al.morsecodeconverter.editorlistener.TextBoxEditor;
 import com.al.morsecodeconverter.worker.MorseCodeWorker;
 
+/**
+ * This class represents the activity that takes in Text Character. 
+ * These Character are then converted to Morse Code.
+ * @author AL
+ *
+ */
 public class TextActivity extends Activity
 {
     MorseCodeWorker workerClass = new MorseCodeWorker();

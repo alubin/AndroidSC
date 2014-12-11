@@ -7,6 +7,11 @@ import android.widget.TextView;
 
 import com.al.morsecodeconverter.editorlistener.TextBoxEditor;
 
+/**
+ * This class takes in Morse Code and converts that into English Text.
+ * @author AL
+ *
+ */
 public class MorseActivity extends Activity
 {
     
