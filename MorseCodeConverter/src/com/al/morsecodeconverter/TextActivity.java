@@ -42,10 +42,6 @@ public class TextActivity extends Activity
 		
 	    }
 	});
-//	if(input != null)
-//	{
-//	    convertBtn.setOnClickListener(new morseConverter(input, null));
-//	}
 
     }
 
