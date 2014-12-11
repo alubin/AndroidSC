@@ -19,26 +19,40 @@ public class TextActivity extends Activity
 {
     //This string is used for any TAG displays.
     String classname = getClass().getSimpleName();
-    
+
     MorseCodeWorker workerClass = new MorseCodeWorker();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_text);
-	
+
 	EditText textInput = (EditText) findViewById(R.id.textInputBox);
-	
+
 	Button convertBtn = (Button) findViewById(R.id.convertText);
-	convertBtn.setOnClickListener(new morseConverter(textInput.getText().toString(), null));
-	
-//	textInput.addTextChangedListener(new TextBoxEditor((TextView) findViewById(R.id.textMorseDisplay),'t'));
+	convertBtn.setOnClickListener(new View.OnClickListener()
+	{
+	    
+	    @Override
+	    public void onClick(View v)
+	    {
+//		String input = textInput.getText().toString();
+//		    Log.d(classname, "Cool = " + inputString);
+//		    mWorker.textToMorse(inputString);
+		
+	    }
+	});
+//	if(input != null)
+//	{
+//	    convertBtn.setOnClickListener(new morseConverter(input, null));
+//	}
+
     }
-    
+
     private class morseConverter implements View.OnClickListener{
 	private String inputString;
 	private MorseCodeWorker mWorker;
-	
+
 	public morseConverter(String input, View v)
 	{
 	    mWorker = new MorseCodeWorker();
@@ -49,10 +63,11 @@ public class TextActivity extends Activity
 	@Override
 	public void onClick(View v)
 	{
-	    String strResult = mWorker.mCodeEncode(inputString);
-	    Log.d(classname, strResult);
-	    
+//	    String strResult = mWorker.mCodeEncode(inputString);
+	    Log.d(classname, "Cool = " + inputString);
+	    mWorker.textToMorse(inputString);
+
 	}
-	
+
     }
 }

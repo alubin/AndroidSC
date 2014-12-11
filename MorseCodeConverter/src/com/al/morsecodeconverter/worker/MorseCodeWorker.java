@@ -5,6 +5,9 @@ import java.util.HashMap;
 import android.util.Log;
 
 public class MorseCodeWorker {
+    //This string is used for any TAG displays.
+    String classname = getClass().getSimpleName();
+    
     HashMap <Character, String> mCodeCharMap = new HashMap<Character, String>();
     HashMap <String, Character> mCodeMap = new HashMap<String, Character>();
     public MorseCodeWorker()
@@ -166,6 +169,21 @@ public class MorseCodeWorker {
     public Character mCodeDecodeChar(String morseChar)
     {
 	return mCodeMap.get(morseChar) == null ? '?' : mCodeMap.get(morseChar); 
+    }
+    
+    public String textToMorse(String input)
+    {
+	StringBuffer encodeString = new StringBuffer();
+	for(int i = 0; i < input.length(); i++)
+	{
+	    String searchResult = mCodeCharMap.get(Character.toLowerCase(input.charAt(i)));
+//	    Log.d(classname, searchResult);
+	    if(searchResult != null)
+	    {
+		encodeString.append(searchResult + "  ");
+	    }
+	}
+	return encodeString.toString();
     }
 
 }
