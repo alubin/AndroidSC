@@ -27,43 +27,30 @@ public class TextActivity extends Activity
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_text);
 
-	EditText textInput = (EditText) findViewById(R.id.textInputBox);
+	final EditText textInput = (EditText) findViewById(R.id.textInputBox);
 
 	Button convertBtn = (Button) findViewById(R.id.convertText);
+	//This button is used to convert the text.
 	convertBtn.setOnClickListener(new View.OnClickListener()
 	{
-	    
+
 	    @Override
 	    public void onClick(View v)
 	    {
-//		String input = textInput.getText().toString();
-//		    Log.d(classname, "Cool = " + inputString);
-//		    mWorker.textToMorse(inputString);
-		
+		EditText textToMorseDisplay = (EditText) findViewById(R.id.textMorseDisplay);
+		String text = textInput.getText().toString();
+		if(text != null)
+		{
+		    try
+		    {
+			textToMorseDisplay.setText(workerClass.toMorse(text));
+		    } catch (Exception e)
+		    {
+			textToMorseDisplay.setText("Invalid Input was given.");
+		    }
+		}
 	    }
 	});
-
-    }
-
-    private class morseConverter implements View.OnClickListener{
-	private String inputString;
-	private MorseCodeWorker mWorker;
-
-	public morseConverter(String input, View v)
-	{
-	    mWorker = new MorseCodeWorker();
-	    this.inputString = input;
-	    onClick(v);
-	}
-
-	@Override
-	public void onClick(View v)
-	{
-//	    String strResult = mWorker.mCodeEncode(inputString);
-	    Log.d(classname, "Cool = " + inputString);
-	    mWorker.textToMorse(inputString);
-
-	}
 
     }
 }

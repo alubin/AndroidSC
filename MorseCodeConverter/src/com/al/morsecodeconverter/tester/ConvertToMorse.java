@@ -24,7 +24,7 @@ public class ConvertToMorse
 	//	fail("Not yet implemented");
 	for(char alphaChar: alphabet)
 	{
-	    System.out.println(mWorker.mCodeEncode(alphaChar));
+	    System.out.println(mWorker.toMorse(alphaChar));
 	}
     }
 

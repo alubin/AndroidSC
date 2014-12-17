@@ -67,7 +67,13 @@ public class TextBoxEditor implements TextWatcher
 	switch (type)
 	{
 	case 'm':
-	    output = workerClass.mCodeEncode(s.toString());
+	    try
+	    {
+		output = workerClass.toMorse(s.toString());
+	    } catch (Exception e)
+	    {
+		//TODO: Figure out what needs to be done.
+	    }
 	    break;
 	case 't':
 	    //	    output = workerClass.morsecodechardecode(s.toString());
