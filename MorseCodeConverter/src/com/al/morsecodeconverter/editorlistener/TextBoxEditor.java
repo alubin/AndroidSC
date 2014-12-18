@@ -53,8 +53,8 @@ public class TextBoxEditor implements TextWatcher
 	
 	if(type == 'm')
 	{
-	    String output = workerClass.mCodeDecodeString(word.toString());
-	    text.setText(output);
+//	    String output = workerClass.mCodeDecodeString(word.toString());
+//	    text.setText(output);
 	}
 
     }

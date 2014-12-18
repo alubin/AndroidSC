@@ -118,37 +118,18 @@ public class MorseCodeWorker {
 	}
 	return result;
     }
-
-    public String mCodeDecodeSequence(String inputString)
+    
+    public String toText(String inputMorseString)
     {
-	StringBuilder outputString = new StringBuilder();
-	
-	for(int i = 0; i < inputString.length(); i++)
+	StringBuilder output = new StringBuilder();
+	String[] inputArray = inputMorseString.split("  ");
+	for(String morseCode: inputArray)
 	{
-	    Character morseLetter = morseMap.get(inputString.charAt(i));
-	    System.out.println(morseLetter);
-	    if(morseLetter != null)
-	    {
-		outputString.append( morseLetter);
-	    }
+	    output.append(morseMap.get(morseCode));
 	}
-	return outputString.toString();
+	return output.toString();
+    }
 
-    }
-    
-    public String mCodeDecodeString(String inputString)
-    {
-	StringBuilder outputString = new StringBuilder();
-	    outputString.append(morseMap.get(inputString));
-	return outputString.toString();
-
-    }
-    
-    public Character mCodeDecodeChar(String morseChar)
-    {
-	return morseMap.get(morseChar) == null ? '?' : morseMap.get(morseChar); 
-    }
-    
     public String toMorse(String input) throws Exception
     {
 	StringBuffer encodeString = new StringBuffer();	
