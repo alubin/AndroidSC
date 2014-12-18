@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.al.morsecodeconverter.worker.MorseCodeWorker;
 
@@ -27,7 +28,7 @@ public class TextActivity extends Activity
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_text);
 
-	final EditText textInput = (EditText) findViewById(R.id.textInputBox);
+	final TextView textInput = (TextView) findViewById(R.id.textInputBox);
 
 	Button convertBtn = (Button) findViewById(R.id.convertText);
 	//This button is used to convert the text.
@@ -37,7 +38,7 @@ public class TextActivity extends Activity
 	    @Override
 	    public void onClick(View v)
 	    {
-		EditText textToMorseDisplay = (EditText) findViewById(R.id.textMorseDisplay);
+		TextView textToMorseDisplay = (TextView) findViewById(R.id.textMorseDisplay);
 		String text = textInput.getText().toString();
 		if(text != null)
 		{

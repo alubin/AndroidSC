@@ -22,7 +22,7 @@ public class MorseActivity extends Activity
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_morse);
 	
-	EditText morseInputView = (EditText) findViewById(R.id.inputMorse);
+	TextView morseInputView = (TextView) findViewById(R.id.inputMorse);
 //	morseInput.addTextChangedListener(new TextBoxEditor((TextView) findViewById(R.id.morseCodeDisplay), 'm'));
     }
 }
