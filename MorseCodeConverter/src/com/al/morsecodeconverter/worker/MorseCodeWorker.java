@@ -15,6 +15,9 @@ public class MorseCodeWorker {
 	buildMaps();
     }
 
+    /**
+     * Builds the maps needed to convert the morse code to/from english characters.
+     */
     private void buildMaps()
     {
 	charMap.put('a', ". _");
@@ -100,6 +103,11 @@ public class MorseCodeWorker {
 
     }
 
+    /**
+     * This function takes an English character and outputs the Morse code string equivalent.
+     * @param inputChar The character to be converted to morse code.
+     * @return
+     */
     public String toMorse(Character inputChar)
     {
 	return charMap.get(Character.toLowerCase(inputChar));

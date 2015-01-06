@@ -2,10 +2,8 @@ package com.al.morsecodeconverter;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.al.morsecodeconverter.worker.MorseCodeWorker;
@@ -34,6 +32,7 @@ public class TextActivity extends Activity
 	//This button is used to convert the text.
 	convertBtn.setOnClickListener(new View.OnClickListener()
 	{
+	    /* This listener takes in the user text and convert it to morse code when the convert button is pressed.*/
 
 	    @Override
 	    public void onClick(View v)

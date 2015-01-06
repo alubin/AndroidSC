@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.al.morsecodeconverter.editorlistener.TextBoxEditor;
 import com.al.morsecodeconverter.worker.MorseCodeWorker;
 
 /**
@@ -28,13 +26,16 @@ public class MorseActivity extends Activity
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_morse);
 
+	//This represents the morse code input of the user.
 	final TextView morseInputView = (TextView) findViewById(R.id.inputMorse);
 
+	//This converts the morse code into english text.
 	Button convertBtn = (Button) findViewById(R.id.convertMorse);
 
+	//Performs the action for the coversion button. 
 	convertBtn.setOnClickListener(new View.OnClickListener()
 	{
-
+	    /*This listener takes in the values from the input field and converts the code. */
 	    @Override
 	    public void onClick(View v)
 	    {
@@ -43,7 +44,6 @@ public class MorseActivity extends Activity
 		if(morseText != null)
 		{
 		    textDisplay.setText(workerClass.toText(morseText));
-//		    textDisplay.setText("Fun");
 		}
 
 	    }
